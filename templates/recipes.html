@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>pishmicheal</title>
+</head>
+
+<body>
+   {% for recipe in recipes %}
+   {{recipe.country_name}}
+   {{recipe.course_name}}
+   {{recipe.user_name}}
+   {{recipe.recipe_description}}
+   {{recipe.preparation_time}}
+   {{recipe.cooking_time}}
+   {{recipe.total_time}}
+   {{recipe.ingredients}}
+   {{recipe.allergens}}
+   {{recipe.recommend}}
+   {% endfor %}
+</body>
+
+</html>
