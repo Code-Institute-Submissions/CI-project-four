@@ -28,12 +28,19 @@
                         <strong>Total Time:</strong> {{recipe.total_time}}<br>
                         <strong>Ingredients:</strong> {{recipe.ingredients}}<br>
                         <strong>Allergens:</strong> {{recipe.allergens}}<br>
-                        <strong> Get It Inta Ya!:</strong> {{recipe.recommend}}
                      </span>
 
                   </li>
                </ul>
-               <br>
+               <div class="row">
+                  <div class="switch">
+                     <label>
+                        <input id="recommend" name="recommend" type="checkbox">
+                        <span class="lever"></span>
+                        Recommend
+                     </label>
+                  </div>
+               </div>
                <hr>
                <div>
                   <a href="" class="waves-effect waves-light btn btn_medium green">Edit</a>
