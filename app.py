@@ -17,9 +17,11 @@ def get_recipes():
                            recipes=mongo.db.recipes.find())
 
 
-# @app.route('/')
-# def hello():
-#     return 'Hello Clarice'
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('addrecipe.html',
+                           countries=mongo.db.countries.find(),
+                           courses=mongo.db.courses.find())
 
 
 if __name__ == '__main__':
