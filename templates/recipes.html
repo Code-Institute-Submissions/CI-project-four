@@ -13,7 +13,7 @@
             </div>
             <div class="card-content">
                <span class="card-title activator blue-grey-text text-darken-3">{{recipe.recipe_name}}<i class="material-icons right">keyboard_arrow_down</i></span>
-               <p><strong>Country of origin:</strong> {{recipe.country_name}}</p>
+               <p><strong>Country of origin:</strong> {{recipe.country_name}}</p><br>
                <p><strong>Course Type:</strong> {{recipe.course_type}}</p>
             </div>
             <div class="card-reveal">
@@ -22,11 +22,13 @@
                <ul>
                   <li>
                      <span>
-                        <strong>Username:</strong> {{recipe.user_name}}<br>
+                        <strong>Username:</strong> {{recipe.user_name}}<br><br>
                         <strong>Preparation:</strong> {{recipe.preparation_time}}
                         <strong>Cooking:</strong> {{recipe.cooking_time}}
-                        <strong>Total Time:</strong> {{recipe.total_time}}<br>
-                        <strong>Ingredients:</strong> {{recipe.ingredients}}<br>
+                        <strong>Total Time:</strong> {{recipe.total_time}}<br><br>
+                        <strong>Servings:</strong> {{recipe.servings}}<br><br>
+                        <strong>Ingredients:</strong> {{recipe.ingredients}}<br><br>
+                        <strong>Cooking Instructions:</strong> {{recipe.instructions}}<br><br>
                         <strong>Allergens:</strong> {{recipe.allergens}}<br>
                      </span>
 
