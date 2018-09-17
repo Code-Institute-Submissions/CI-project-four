@@ -38,14 +38,14 @@
          <div class="row">
             <div class="input-field col s12">
                <i class="material-icons prefix">child_care</i>
-               <input id="user_name" name="user_name" type="text" value={{recipe.user_name}}>
+               <textarea id="user_name" name="user_name" class="materialize-textarea">{{recipe.user_name}}</textarea>
                <label for="icon_prefix">User</label>
             </div>
          </div>
          <div class="row">
             <div class="input-field col s12">
                <i class="material-icons prefix">create</i>
-               <input id="recipe_name" name="recipe_name" type="text" value={{recipe.recipe_name}}>
+               <textarea id="recipe_name" name="recipe_name" class="materialize-textarea">{{recipe.recipe_name}}</textarea>
                <label for="icon_prefix">Recipe Name</label>
             </div>
          </div>
@@ -97,7 +97,7 @@
          <div class="row">
             <div class="input-field col s12">
                <i class="material-icons prefix">error_outline</i>
-               <input id="allergens" name="allergens" type="text" value={{recipe.allergens}}>
+               <textarea id="allergens" name="allergens" class="materialize-textarea">{{recipe.allergens}}</textarea>
                <label for="icon_prefix">Allergens</label>
             </div>
          </div>
