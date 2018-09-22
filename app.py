@@ -77,9 +77,24 @@ def courses():
 @app.route('/recipes_by_course/<course_type>')
 def recipes_by_course(course_type):
     return render_template(
-        "courses.html",
+        "recipes_by_course.html",
         recipes=mongo.db.recipes.find({"course_type": course_type}),
         courses=mongo.db.courses.find()
+    )
+
+
+@app.route('/countries')
+def countries():
+    return render_template("countries.html",
+                           recipes=mongo.db.recipes.find())
+
+
+@app.route('/recipes_by_country/<country_name>')
+def recipes_by_country(country_name):
+    return render_template(
+        "recipes_by_country.html",
+        recipes=mongo.db.recipes.find({"country_name": country_name}),
+        countries=mongo.db.countries.find()
     )
 
 
