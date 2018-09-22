@@ -61,10 +61,27 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('get_recipes'))
 
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+
+
+@app.route('/courses')
+def courses():
+    return render_template("courses.html",
+                           recipes=mongo.db.recipes.find())
+
+
+@app.route('/recipes_by_course/<course_type>')
+def recipes_by_course(course_type):
+    return render_template(
+        "courses.html",
+        recipes=mongo.db.recipes.find({"course_type": course_type}),
+        courses=mongo.db.courses.find()
+    )
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
