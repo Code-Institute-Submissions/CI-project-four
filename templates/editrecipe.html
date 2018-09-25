@@ -103,6 +103,13 @@
             </div>
             <div class="row">
                <div class="input-field col s12">
+                  <i class="material-icons prefix">label_outline</i>
+                  <input id="tags" name="tags" type="text" value="{{recipe.tags}}">
+                  <label for="icon_prefix">Tags</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
                   <i class="material-icons prefix">error_outline</i>
                   <textarea id="allergens" name="allergens" class="materialize-textarea">{{recipe.allergens}}</textarea>
                   <label for="icon_prefix">Allergens</label>
