@@ -1,0 +1,12 @@
+body {
+   margin-top: 60px;
+   background-color: #f5f5f5;
+}
+
+.card {
+   background-color: seashell;
+}
+
+.card .card-reveal {
+   background-color: #f5fffa;
+}
