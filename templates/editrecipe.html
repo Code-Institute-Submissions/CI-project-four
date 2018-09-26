@@ -1,130 +1,146 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-   <div class="row">
-      <h3>Edit Recipe</h3><br>
-      <form action="{{ url_for('insert_recipe')}}" method="POST" class="col s12">
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">flight</i>
-               <select id="country" name="country_name">
-                  <option value="" disabled selected>Choose Country</option>
-                  {% for country in countries %}
-                  {% if country.country_name == recipe.country_name %}
-                  <option value="{{country.country_name}}" selected>{{country.country_name}}</option>
-                  {% else %}
-                  <option value="{{country.country_name}}">{{country.country_name}}</option>
-                  {% endif %}
-                  {% endfor %}
-               </select>
-               <label>Country Of Origin</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">color_lens</i>
-               <select id="course" name="course_type">
-                  <option value="" disabled selected>Choose Course Type</option>
-                  {% for course in courses %}
-                  {% if course.course_type == recipe.course_type %}
-                  <option value="{{course.course_type}}" selected>{{course.course_type}}</option>
-                  {% else %}
-                  <option value="{{course.course_type}}">{{course.course_type}}</option>
-                  {% endif %}
-                  {% endfor %}
-               </select>
-               <label>Course Type</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">child_care</i>
-               <textarea id="user_name" name="user_name" class="materialize-textarea">{{recipe.user_name}}</textarea>
-               <label for="icon_prefix">User</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">create</i>
-               <textarea id="recipe_name" name="recipe_name" class="materialize-textarea">{{recipe.recipe_name}}</textarea>
-               <label for="icon_prefix">Recipe Name</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">content_paste</i>
-               <textarea name="recipe_description" id="recipe_description" class="materialize-textarea"> {{recipe.recipe_description}}</textarea>
-               <label for="icon_telephone">Description</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s4">
-               <i class="material-icons prefix">hourglass_empty</i>
-               <input id="preparation_time" name="preparation_time" type="text" value={{recipe.preparation_time}}>
-               <label for="icon_prefix">Preparation Time</label>
-            </div>
-            <div class="input-field col s4">
-               <i class="material-icons prefix">hourglass_full</i>
-               <input id="cooking_time" name="cooking_time" type="text" value={{recipe.cooking_time}}>
-               <label for="icon_prefix">Cooking Time</label>
-            </div>
-            <div class="input-field col s4">
-               <i class="material-icons prefix">assignment_turned_in</i>
-               <input id="total_time" name="total_time" type="text" value={{recipe.total_time}}>
-               <label for="icon_prefix">Total Time</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="input-field col s12">
-               <i class="material-icons prefix">local_dining</i>
-               <select required id="servings" name="servings">
-                  <option value="" disabled selected>Enter servings amount</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-               </select>
-               <label>Total servings</label>
-            </div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <i class="material-icons prefix">list</i>
-                  <textarea name="ingredients" id="ingredients" class="materialize-textarea">{{recipe.ingredients}}</textarea>
-                  <label for="icon_prefix">Ingredients List</label>
-               </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <i class="material-icons prefix">local_library</i>
-                  <textarea name="instructions" id="instructions" class="materialize-textarea">{{recipe.instructions}}</textarea>
-                  <label for="icon_prefix">Cooking Instructions</label>
-               </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <i class="material-icons prefix">label_outline</i>
-                  <input id="tags" name="tags" type="text" value="{{recipe.tags}}">
-                  <label for="icon_prefix">Tags</label>
-               </div>
-            </div>
-            <div class="row">
-               <div class="input-field col s12">
-                  <i class="material-icons prefix">error_outline</i>
-                  <textarea id="allergens" name="allergens" class="materialize-textarea">{{recipe.allergens}}</textarea>
-                  <label for="icon_prefix">Allergens</label>
-               </div>
-            </div>
-            <br>
-            <div class="row">
-               <button class="btn waves-effect waves-light green" type="submit" name="action">Edit recipe
-                  <i class="material-icons right">playlist_add</i>
-               </button>
-               <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
-                  <i class="material-icons right">cancel</i>Cancel
-               </a>
-            </div>
-      </form>
-   </div>
+      <div class="row">
+            <h3>Edit Recipe</h3><br>
+            <form action="{{ url_for('insert_recipe')}}" method="POST" class="col s12">
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">flight</i>
+                              <select id="country" name="country_name">
+                                    <option value="" disabled selected>Choose Country</option>
+                                    {% for country in countries %}
+                                    {% if country.country_name == recipe.country_name %}
+                                    <option value="{{country.country_name}}" selected>{{country.country_name}}</option>
+                                    {% else %}
+                                    <option value="{{country.country_name}}">{{country.country_name}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                              </select>
+                              <label>Country Of Origin</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">color_lens</i>
+                              <select id="course" name="course_type">
+                                    <option value="" disabled selected>Choose Course Type</option>
+                                    {% for course in courses %}
+                                    {% if course.course_type == recipe.course_type %}
+                                    <option value="{{course.course_type}}" selected>{{course.course_type}}</option>
+                                    {% else %}
+                                    <option value="{{course.course_type}}">{{course.course_type}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                              </select>
+                              <label>Course Type</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">child_care</i>
+                              <textarea id="user_name" name="user_name" class="materialize-textarea">{{recipe.user_name}}</textarea>
+                              <label for="icon_prefix">User</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">create</i>
+                              <textarea id="recipe_name" name="recipe_name" class="materialize-textarea">{{recipe.recipe_name}}</textarea>
+                              <label for="icon_prefix">Recipe Name</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">content_paste</i>
+                              <textarea name="recipe_description" id="recipe_description" class="materialize-textarea"> {{recipe.recipe_description}}</textarea>
+                              <label for="icon_telephone">Description</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s4">
+                              <i class="material-icons prefix">hourglass_empty</i>
+                              <input id="preparation_time" name="preparation_time" type="text" value={{recipe.preparation_time}}>
+                              <label for="icon_prefix">Preparation Time</label>
+                        </div>
+                        <div class="input-field col s4">
+                              <i class="material-icons prefix">hourglass_full</i>
+                              <input id="cooking_time" name="cooking_time" type="text" value={{recipe.cooking_time}}>
+                              <label for="icon_prefix">Cooking Time</label>
+                        </div>
+                        <div class="input-field col s4">
+                              <i class="material-icons prefix">assignment_turned_in</i>
+                              <input id="total_time" name="total_time" type="text" value={{recipe.total_time}}>
+                              <label for="icon_prefix">Total Time</label>
+                        </div>
+                  </div>
+                  <!-- <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">local_dining</i>
+                              <select required id="servings" name="servings">
+                                    <option value="" disabled selected>Enter servings amount</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                              </select>
+                              <label>Total servings</label>
+                        </div>
+                  </div> -->
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <select name="servings" class="validate">
+                                    <option selected>{{ recipe.servings }}</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                              </select>
+                              <label>Total Servings</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">list</i>
+                              <textarea name="ingredients" id="ingredients" class="materialize-textarea">{{recipe.ingredients}}</textarea>
+                              <label for="icon_prefix">Ingredients List</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">local_library</i>
+                              <textarea name="instructions" id="instructions" class="materialize-textarea">{{recipe.instructions}}</textarea>
+                              <label for="icon_prefix">Cooking Instructions</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">label_outline</i>
+                              <input id="tags" name="tags" type="text" value="{{recipe.tags}}">
+                              <label for="icon_prefix">Tags</label>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="input-field col s12">
+                              <i class="material-icons prefix">error_outline</i>
+                              <textarea id="allergens" name="allergens" class="materialize-textarea">{{recipe.allergens}}</textarea>
+                              <label for="icon_prefix">Allergens</label>
+                        </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                        <button class="btn waves-effect waves-light green" type="submit" name="action">Edit
+                              recipe
+                              <i class="material-icons right">playlist_add</i>
+                        </button>
+                        <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
+                              <i class="material-icons right">cancel</i>Cancel
+                        </a>
+                  </div>
+            </form>
+      </div>
 </div>
 {% endblock %}
