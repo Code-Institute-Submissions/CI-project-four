@@ -12,6 +12,28 @@
 </head>
 
 <body>
+   <header>
+      <nav>
+         <div class="nav-wrapper">
+            <a href="{{url_for('index')}}" class="brand-logo">Asian Cuisine</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="{{url_for('index')}}">Home</a></li>
+               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+               <li><a href="{{url_for('courses')}}">By Course</a></li>
+               <li><a href="{{url_for('countries')}}">By Country </a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+               <li><a href="{{url_for('index')}}">Home</a></li>
+               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
+               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+               <li><a href="{{url_for('courses')}}">By Course</a></li>
+               <li><a href="{{url_for('countries')}}">By Country</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
    <div class="container1">
       {% block content %}
       {% endblock %}
@@ -22,6 +44,8 @@
    <script type="text/javascript">
       $(document).ready(function () {
          $('select').material_select();
+         $(".button-collapse").sideNav();
+         $('.sidenav').sideNav();
       });
    </script>
 
