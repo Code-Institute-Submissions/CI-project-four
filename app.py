@@ -1,8 +1,8 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
+import bcrypt
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'flask_cookbook'
@@ -14,8 +14,23 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html",
-                           recipes=mongo.db.recipes.find())
+    if 'username' in session:
+        flash('You were successfully logged in')
+        return redirect(url_for('get_recipes'))
+    return render_template('index.html')
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    users = mongo.db.users
+    login_user = users.find_one({'user_name': request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('courses'))
+
+    return 'Invalid username/password combination'
 
 
 @app.route('/get_recipes')
@@ -43,7 +58,7 @@ def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_countries = mongo.db.countries.find()
     all_courses = mongo.db.courses.find()
-   #  user = mongo.db.recipes.find()
+    #  user = mongo.db.recipes.find()
     return render_template('editrecipe.html', recipe=the_recipe, countries=all_countries, courses=all_courses)
 
 
@@ -106,6 +121,7 @@ def recipes_by_country(country_name):
 
 
 if __name__ == '__main__':
+    app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
