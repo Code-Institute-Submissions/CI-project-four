@@ -53,6 +53,13 @@ def register():
     return render_template('register.html')
 
 
+@app.route('/logout')
+def logout():
+    # remove the username from the session if it is there
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html",
