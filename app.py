@@ -33,6 +33,26 @@ def login():
     return 'Invalid username/password combination'
 
 
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        current_user = users.find_one({'user_name': request.form['username']})
+
+        if current_user is None:
+            hashpass = bcrypt.hashpw(
+                request.form['password'].encode('utf-8'), bcrypt.gensalt())
+            users.insert(
+                {'user_name': request.form['username'], 'password': hashpass})
+            session['username'] = request.form['username']
+            flash('You were successfully logged in')
+            return redirect(url_for('courses'))
+
+        return 'That username already exists!'
+
+    return render_template('register.html')
+
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html",
