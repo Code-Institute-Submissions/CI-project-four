@@ -15,9 +15,13 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     if 'username' in session:
-        flash('You were successfully logged in')
         return redirect(url_for('get_recipes'))
-    return render_template('index.html')
+    return render_template('index.html', name_taken="")
+
+
+@app.route('/logged_in')
+def logged_in():
+    return redirect(url_for('courses'))
 
 
 @app.route('/login', methods=['POST'])
@@ -30,7 +34,8 @@ def login():
             session['username'] = request.form['username']
             return redirect(url_for('courses'))
 
-    return 'Invalid username/password combination'
+    flash("An invalid Username/Password combination has been entered. Please try again")
+    return render_template('index.html')
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -42,15 +47,13 @@ def register():
         if current_user is None:
             hashpass = bcrypt.hashpw(
                 request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert(
+            users.insert_one(
                 {'user_name': request.form['username'], 'password': hashpass})
             session['username'] = request.form['username']
-            flash('You were successfully logged in')
             return redirect(url_for('courses'))
 
-        return 'That username already exists!'
-
-    return render_template('register.html')
+    # flash("That Username already exists")
+    return render_template('index.html', name_taken="That Username already exists. Please choose another one.")
 
 
 @app.route('/logout')
