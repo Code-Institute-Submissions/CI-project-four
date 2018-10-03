@@ -8,7 +8,7 @@
       <div>
          {% for recipe in recipes %}
          <div class="col s12 m6 l4">
-            <div class="card medium">
+            <div class="card medium hoverable">
                <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="static/img/vegan1.jpeg" alt="Picture of fruit and vegetables">
                </div>
@@ -17,7 +17,7 @@
                   <p><strong>Country of origin:</strong> {{recipe.country_name}}</p>
                   <p><strong>Course Type:</strong> {{recipe.course_type}}</p><br>
                </div>
-               <div class="card-reveal sham">
+               <div class="card-reveal">
                   <span class="card-title blue-grey-text text-darken-3 "><i class="material-icons right">close</i>{{recipe.recipe_name}}</span>
                   <p>{{recipe.recipe_description}}</p>
                   <ul>
