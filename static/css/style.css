@@ -57,3 +57,42 @@ nav .brand-logo {
 
 
 } */
+
+/* register/login */
+
+.index-body {
+   background-image: url(/static/img/bgindex.jpg);
+   background-size: cover;
+   color: #fff;
+   /* background-repeat: no-repeat; */
+}
+
+.index-style {
+   margin-top: 300px;
+}
+
+.index-style .card {
+   background: rgba(0, 0, 0, .6);
+}
+
+.index-style label {
+   font-size: 16px;
+   color: #ccc;
+}
+
+.index-style input {
+   font-size: 20px;
+   color: #fff;
+}
+
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+   background-color: rgba(0, 0, 0, .6) !important;
+   ;
+   background: rgba(0, 0, 0, .6) !important;
+   ;
+   background-image: none !important;
+   color: #fff !important;
+}
