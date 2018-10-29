@@ -73,9 +73,11 @@ def get_recipes():
 
 @app.route('/add_recipe')
 def add_recipe():
+    countries = mongo.db.countries.find()
+    courses = mongo.db.courses.find()
     return render_template('addrecipe.html',
-                           countries=mongo.db.countries.find(),
-                           courses=mongo.db.courses.find())
+                           countries=countries,
+                           courses=courses)
 
 
 @app.route('/insert_recipe', methods=['POST'])
@@ -124,34 +126,38 @@ def delete_recipe(recipe_id):
 
 @app.route('/courses')
 def courses():
+    recipes = mongo.db.recipes.find()
     return render_template("courses.html",
-                           recipes=mongo.db.recipes.find())
+                           recipes=recipes)
 
 
 @app.route('/recipes_by_course/<course_type>')
 def recipes_by_course(course_type):
+    courses = mongo.db.courses.find()
+    recipes = mongo.db.recipes.find(
+        {"course_type": course_type}).sort([['_id', -1]])
     return render_template(
         "recipes_by_course.html",
-        recipes=mongo.db.recipes.find(
-            {"course_type": course_type}).sort([['_id', -1]]),
-        courses=mongo.db.courses.find()
-    )
+        courses=courses,
+        recipes=recipes)
 
 
 @app.route('/countries')
 def countries():
+    recipes = mongo.db.recipes.find()
     return render_template("countries.html",
-                           recipes=mongo.db.recipes.find())
+                           recipes=recipes)
 
 
 @app.route('/recipes_by_country/<country_name>')
 def recipes_by_country(country_name):
+    countries = mongo.db.countries.find()
+    recipes = mongo.db.recipes.find(
+        {"country_name": country_name}).sort([['_id', -1]])
     return render_template(
         "recipes_by_country.html",
-        recipes=mongo.db.recipes.find(
-            {"country_name": country_name}).sort([['_id', -1]]),
-        countries=mongo.db.countries.find()
-    )
+        countries=countries,
+        recipes=recipes)
 
 
 if __name__ == '__main__':
@@ -159,11 +165,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
-
-
-db.test.find({"number": {"$gt": 1}}).sort({"number": 1, "date": -1})
-db.test.find({"number": {"$gt": 1}}).sort([("number", 1), ("date", -1)])
-recipes = mongo.db.recipes.find({"_id": {"$gt": 1}}).sort([
-    ("_id", 1), ("date", -1)])
-
-# .sort({"_id", -1})
