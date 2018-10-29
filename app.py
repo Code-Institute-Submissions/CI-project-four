@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session, flash
+from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
+# from flask_paginate import Pagination, get_page_parameter, get_page_args
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'flask_cookbook'
@@ -65,8 +66,9 @@ def logout():
 
 @app.route('/get_recipes')
 def get_recipes():
+    recipes = mongo.db.recipes.find().sort([['_id', -1]])
     return render_template("recipes.html",
-                           recipes=mongo.db.recipes.find())
+                           recipes=recipes)
 
 
 @app.route('/add_recipe')
@@ -130,7 +132,8 @@ def courses():
 def recipes_by_course(course_type):
     return render_template(
         "recipes_by_course.html",
-        recipes=mongo.db.recipes.find({"course_type": course_type}),
+        recipes=mongo.db.recipes.find(
+            {"course_type": course_type}).sort([['_id', -1]]),
         courses=mongo.db.courses.find()
     )
 
@@ -145,7 +148,8 @@ def countries():
 def recipes_by_country(country_name):
     return render_template(
         "recipes_by_country.html",
-        recipes=mongo.db.recipes.find({"country_name": country_name}),
+        recipes=mongo.db.recipes.find(
+            {"country_name": country_name}).sort([['_id', -1]]),
         countries=mongo.db.countries.find()
     )
 
@@ -155,3 +159,11 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
+
+
+db.test.find({"number": {"$gt": 1}}).sort({"number": 1, "date": -1})
+db.test.find({"number": {"$gt": 1}}).sort([("number", 1), ("date", -1)])
+recipes = mongo.db.recipes.find({"_id": {"$gt": 1}}).sort([
+    ("_id", 1), ("date", -1)])
+
+# .sort({"_id", -1})
