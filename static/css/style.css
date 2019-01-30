@@ -1,21 +1,66 @@
-body {
+/*--------------------------------------------Global Styles*/
 
-   background-color: #f5f5f5;
+html,
+body {
+   width: 100%;
+   height: 100%;
+   margin: 0px;
+   background-color: seashell;
+   font-weight: 450;
 }
 
+
+/*--------------------------------------------Card Styles*/
+
 .card {
-   background-color: seashell;
+   background-color: #f5f5dc;
 }
 
 .card .card-reveal {
    background-color: #f5fffa;
 }
 
+.card-reveal {
+   font-size: 16px;
+   font-weight: 350;
+}
+
+.card .card-title {
+   font-size: 20px;
+   font-weight: 400;
+}
+
+.card {
+   margin-top: 30px;
+   margin-bottom: 60px;
+}
+
+p>strong {
+   font-weight: 300;
+}
+
+.card-content p {
+   font-weight: 500;
+   font-size: 15px;
+}
+
+.card.medium {
+   height: 350px;
+
+}
+
+.card .card-content {
+   padding-bottom: 40px;
+   padding-top: 10px;
+}
+
 .side-nav {
    width: 180px;
    padding: none;
-
 }
+
+
+/*--------------------------------------------Navbar Styles*/
 
 .nav-wrapper {
    background-color: #778899;
@@ -39,6 +84,9 @@ nav .brand-logo {
    padding-left: 15px;
 }
 
+
+/*--------------------------------------------Miscellaneous Styles*/
+
 .btn_small {
    height: 36px;
    width: 80px;
@@ -47,18 +95,20 @@ nav .brand-logo {
    padding: 0 0.5em;
 }
 
+/*--------------------------------------------Index Page Styles*/
 
-/* register/login */
-
-.index-body {
-   background-image: url(/static/img/bgindex.jpg);
-   background-size: cover;
-   color: #fff;
-   /* background-repeat: no-repeat; */
+@media (min-width: 601px) {
+   .index-body {
+      background-image: url("../../static/img/forks.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+   }
 }
 
 .index-style {
-   margin-top: 300px;
+   padding-top: 80px;
 }
 
 .index-style .card {
@@ -75,7 +125,6 @@ nav .brand-logo {
    color: #fff;
 }
 
-
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
@@ -85,4 +134,42 @@ select:-webkit-autofill {
    ;
    background-image: none !important;
    color: #fff !important;
+}
+
+
+/*--------------------------------------------Footer Styles*/
+
+footer,
+.page-footer {
+   text-decoration: none;
+   height: 60px;
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+   background-color: #778899;
+}
+
+footer {
+   position: fixed;
+   margin: auto;
+   height: 100px;
+   width: 100%;
+   margin-top: 0px;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1030;
+}
+
+.link-style {
+   opacity: 1;
+   transition: 0.3s;
+}
+
+.link-style:hover {
+   opacity: 0.4;
+}
+
+/*--------------------------------------------Edit Page Styles*/
+.button-margin {
+   margin-bottom: 50px;
 }
