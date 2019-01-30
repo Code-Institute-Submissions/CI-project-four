@@ -3,9 +3,9 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
-# from flask_paginate import Pagination, get_page_parameter, get_page_args
 
 app = Flask(__name__)
+# Set app.configs
 app.config["MONGO_DBNAME"] = 'flask_cookbook'
 app.config["MONGO_URI"] = 'mongodb://admin:cookbook33@ds233320.mlab.com:33320/flask_cookbook'
 
@@ -14,18 +14,21 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/index')
+# route to index page
 def index():
     if 'username' in session:
         return redirect(url_for('get_recipes'))
-    return render_template('index.html', name_taken="")
+    return render_template('index.html')
 
 
 @app.route('/logged_in')
+# When user is verified as logged in redirect to the courses page
 def logged_in():
     return redirect(url_for('courses'))
 
 
 @app.route('/login', methods=['POST'])
+# route to and logic for the login page
 def login():
     users = mongo.db.users
     login_user = users.find_one({'user_name': request.form['username']})
@@ -34,12 +37,13 @@ def login():
         if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
             return redirect(url_for('courses'))
-
-    flash("An invalid Username/Password combination has been entered. Please try again")
+    # flash error message
+    flash("An invalid Username/Password combination has been entered. Please try again.")
     return render_template('index.html')
 
 
 @app.route('/register', methods=['POST', 'GET'])
+# route to and logic for the registration page
 def register():
     if request.method == 'POST':
         users = mongo.db.users
@@ -53,18 +57,20 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('courses'))
 
-    # flash("That Username already exists")
-    return render_template('index.html', name_taken="That Username already exists. Please choose another one.")
+    # flash error message
+    flash("That Username already exists. Please choose another one.")
+    return render_template('index.html')
 
 
 @app.route('/logout')
 def logout():
-    # remove the username from the session if it is there
+    # remove user from the session and return to index page
     session.pop('username', None)
     return redirect(url_for('index'))
 
 
 @app.route('/get_recipes')
+# route to and logic for the recipe page, returns recipes by newest
 def get_recipes():
     recipes = mongo.db.recipes.find().sort([['_id', -1]])
     return render_template("recipes.html",
@@ -72,6 +78,7 @@ def get_recipes():
 
 
 @app.route('/add_recipe')
+# route to and logic for the add_recipe page
 def add_recipe():
     countries = mongo.db.countries.find()
     courses = mongo.db.courses.find()
@@ -81,6 +88,7 @@ def add_recipe():
 
 
 @app.route('/insert_recipe', methods=['POST'])
+# function to add a recipe to the recipes collection in the mongo database
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
@@ -88,15 +96,16 @@ def insert_recipe():
 
 
 @app.route('/edit_recipe/<recipe_id>')
+# function to edit a recipe from the edit recipe page
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_countries = mongo.db.countries.find()
     all_courses = mongo.db.courses.find()
-    #  user = mongo.db.recipes.find()
     return render_template('editrecipe.html', recipe=the_recipe, countries=all_countries, courses=all_courses)
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
+# function to update a recipe in the recipes collection in the mongo database
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.updateOne({'_id': ObjectId(recipe_id)},
@@ -119,12 +128,14 @@ def update_recipe(recipe_id):
 
 
 @app.route('/delete_recipe/<recipe_id>')
+# function to delete a recipe
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
 
 @app.route('/courses')
+# route to and logic for the courses page
 def courses():
     recipes = mongo.db.recipes.find()
     return render_template("courses.html",
@@ -132,6 +143,7 @@ def courses():
 
 
 @app.route('/recipes_by_course/<course_type>')
+# route to and logic for the recipes_by_course page
 def recipes_by_course(course_type):
     courses = mongo.db.courses.find()
     recipes = mongo.db.recipes.find(
@@ -143,6 +155,7 @@ def recipes_by_course(course_type):
 
 
 @app.route('/countries')
+# route to and logic for the countries page
 def countries():
     recipes = mongo.db.recipes.find()
     return render_template("countries.html",
@@ -150,6 +163,7 @@ def countries():
 
 
 @app.route('/recipes_by_country/<country_name>')
+# route to and logic for the recipes_by_country page
 def recipes_by_country(country_name):
     countries = mongo.db.countries.find()
     recipes = mongo.db.recipes.find(
