@@ -1,17 +1,15 @@
-{% extends 'base.html'%} {% block content %}
-
+{% extends 'base.html'%}
+{% block content %}
 
 <div class="container">
+      <!--Clickable cards which link to the courses recipe collections -->
       <div class="row">
             <br>
             <br>
             <div>
                   <button class="closebtn btn waves-effect waves-light" onclick="this.parentElement.style.display='none'">Registered
-                        & Logged
-                        in
-                        <i class="material-icons left">clear</i>
+                        & Logged in<i class="material-icons left">clear</i>
                   </button>
-
             </div>
             <h5>Courses List</h5>
             <p>Click on the cards for more info</p>
@@ -22,15 +20,14 @@
                               <span class="card-title">Starters</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum corporis esse ullam
-                                    nemo </p>
+                              <h5><small>A delightful collection of starters from across Asia.</small>
+                              </h5>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_course', course_type='Starter')}}">Starters</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -38,16 +35,14 @@
                               <span class="card-title">Mains</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur repudiandae
-                                    maxime sequi
-                              </p>
+                              <h5><small>A delicious collection of dinner options from across Asia.</small>
+                              </h5>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_course', course_type='Main')}}">Mains</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4 offset-m3">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -55,9 +50,7 @@
                               <span class="card-title">Desserts</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic eligendi deserunt
-                                    labore, omnis
-                              </p>
+                              <h5><small>A delectable collection of desserts from across Asia.</small></h5>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_course', course_type='Dessert')}}"> Desserts</a>
