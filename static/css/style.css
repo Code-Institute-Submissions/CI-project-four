@@ -97,7 +97,7 @@ nav .brand-logo {
 
 /*--------------------------------------------Index Page Styles*/
 
-@media (min-width: 601px) {
+@media (min-width: 641px) {
    .index-body {
       background-image: url("../../static/img/forks.jpg");
       background-size: cover;
@@ -136,6 +136,9 @@ select:-webkit-autofill {
    color: #fff !important;
 }
 
+.title-style {
+   background-color: #778899;
+}
 
 /*--------------------------------------------Footer Styles*/
 
