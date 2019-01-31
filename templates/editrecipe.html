@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
+
 <div class="container">
+      <!--A form for users to edit a recipe -->
       <div class="row">
             <h3>Edit Recipe</h3><br>
             <form action="{{ url_for('insert_recipe')}}" method="POST" class="col s12">
@@ -118,7 +121,8 @@
                         </div>
                   </div>
                   <br>
-                  <div class="row">
+                  <div class="row button-margin">
+                        <!--Confirm recipe edit or cancel edit-->
                         <button class="btn waves-effect waves-light green" type="submit" name="action">Edit
                               recipe
                               <i class="material-icons right">playlist_add</i>
@@ -130,4 +134,5 @@
             </form>
       </div>
 </div>
+
 {% endblock %}
