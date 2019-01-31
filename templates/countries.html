@@ -1,7 +1,8 @@
-{% extends 'base.html'%} {% block content %}
-
+{% extends 'base.html'%}
+{% block content %}
 
 <div class="container">
+      <!--Clickable cards which link the the country recipe collections -->
       <div class="row">
             <div class="col s12 m6 l4">
                   <div class="card medium hoverable z-depth-2">
@@ -10,16 +11,13 @@
                               <span class="card-title">中文</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta at, dolorum
-                                    error magnam iure
-                                    est nulla quod mollitia laborum? </p>
+                              <p>Chinese cuisine with a twist, tasty vegan meals you will love to eat. </p>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_country', country_name='China')}}">Chinese Collection</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -27,16 +25,13 @@
                               <span class="card-title"> भारतीय</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta at, dolorum
-                                    error magnam iure
-                                    est nulla quod mollitia laborum? </p>
+                              <p>Delicious and fragrant meat and dairy free Indian specialities. </p>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_country', country_name='India')}}">Indian Collection</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -45,16 +40,13 @@
                                     ไทย</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta at, dolorum
-                                    error magnam iure
-                                    est nulla quod mollitia laborum?</p>
+                              <p>Some well known traditional Thai vegan dishes for you to try.</p>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_country', country_name='Thailand')}}">Thai Collection</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4 offset-l2">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -62,16 +54,13 @@
                               <span class="card-title">Tiếng Việt</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta at, dolorum
-                                    error magnam iure
-                                    est nulla quod mollitia laborum? e</p>
+                              <p>A wonderful selection of some of Vietnam's very best vegan dishes</p>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_country', country_name='Vietnam')}}">Vietnamese Collection</a>
                         </div>
                   </div>
             </div>
-
             <div class="col s12 m6 l4">
                   <div class="card medium hoverable z-depth-2">
                         <div class="card-image">
@@ -79,9 +68,7 @@
                               <span class="card-title">ល្បាយអាស៊ី</span>
                         </div>
                         <div class="card-content">
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta at, dolorum
-                                    error magnam iure
-                                    est nulla quod mollitia laborum?</p>
+                              <p>A mixture of tasty meat and dairy free meals from other Asian countries.</p>
                         </div>
                         <div class="card-action">
                               <a href="{{url_for('recipes_by_country', country_name='Other')}}">Miscellaneous
@@ -89,9 +76,7 @@
                         </div>
                   </div>
             </div>
-
       </div>
 </div>
-
 
 {% endblock %}
