@@ -5,42 +5,27 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <!-- Materialize Icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Materialize CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <!-- Custom CSS -->
    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+
    <title>Mercy for animals</title>
 </head>
 
 <body>
-   <header>
-      <nav>
-         <div class="nav-wrapper">
-            <a href="{{url_for('logged_in')}}" class="brand-logo">Asian Cuisine</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li><a href="{{url_for('logged_in')}}">Home</a></li>
-               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
-               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-               <li><a href="{{url_for('countries')}}">By Country </a></li>
-               <li><a href="{{url_for('logout')}}">Log out</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-               <li><a href="{{url_for('logged_in')}}">Home</a></li>
-               <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
-               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-               <li><a href="{{url_for('countries')}}">By Country</a></li>
-               <li><a href="{{url_for('logout')}}">Log out</a></li>
-            </ul>
-         </div>
-      </nav>
-   </header>
-   <div class="container1">
-      {% block content %}
-      {% endblock %}
-   </div>
-
+   {% include 'includes/_navbar.html' %}
+   {% block content %}
+   {% endblock %}
+   {% include 'includes/_footer.html' %}
+   <!-- Jquery -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!-- Materialize JS -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <!-- Custom JS -->
    <script type="text/javascript">
       $(document).ready(function () {
          $('select').material_select();
@@ -48,7 +33,6 @@
          $('.sidenav').sideNav();
       });
    </script>
-
 </body>
 
 </html>
