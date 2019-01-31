@@ -108,6 +108,13 @@ nav ul a {
    opacity: 0.4;
 }
 
+.fixed-action-btn {
+   padding-bottom: 50px;
+}
+
+.row-padding {
+   padding-bottom: 50px;
+}
 
 /*--------------------------------------------Index Page Styles*/
 
@@ -179,6 +186,15 @@ footer {
 
 
 /*--------------------------------------------Edit Page Styles*/
+/* 
 .button-margin {
    margin-bottom: 50px;
+} */
+
+.input-field .prefix~input,
+.input-field .prefix~textarea,
+.input-field .prefix~label,
+.input-field .prefix~.validate~label,
+.input-field .prefix~.autocomplete-content {
+   font-size: 18px;
 }
