@@ -1,90 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <!-- Materialize Icons -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Materialize CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <!-- Custom CSS -->
    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+
    <title>Mercy for animals</title>
 </head>
 
 <body class="index-body">
-   <div class="container index-style">
-
-      <div class="row">
-         <div class="col s12 m6 l5 offset-l1">
-            <div class="card">
-               <div class="card-action red white-text">
-                  <strong>REGISTER</strong> <i class="material-icons right">person_add</i>
-               </div>
-               <div class="card-content">
-                  <form method=POST action="{{ url_for('register') }}">
-                     <div class="input-field">
-                        <input id='username' name='username' type="text" class="validate" required>
-                        <label class="active" for="username">Choose Username</label>
-                     </div>
-                     <div class="input-field">
-                        <input id='password' name='password' type="text" class="validate" required>
-                        <label class="active" for="password">Choose Password</label>
-                     </div>
-                     <button type="submit" class="waves-effect waves-light btn light-blue darken-2">Register</button>
-                  </form>
-               </div>
-            </div>
-            <div>
-               <p class="red-text darken-4">{{ name_taken }}</p>
+   <div class="container  ">
+      <div class="row index-style">
+         <div class="col s12">
+            <!-- Welcome message -->
+            <div class="card-panel title-style white-text center-align">
+               <h3>
+                  Welcome To My Flask Cookbook
+               </h3>
+               <h5>
+                  <small>This application is a Code Institute project, built with Python & Flask</small>
+               </h5>
+               <br>
+               <h5>
+                  <small>Please register or login below to get started</small>
+               </h5>
             </div>
          </div>
-
-
-         <div class="col s12 m6 l5">
-            <div class="card">
-               <div class="card-action red white-text"><strong>LOG IN</strong><i class="material-icons right">thumb_up</i>
-               </div>
-               <div class="card-content">
-                  <form method=POST action="{{ url_for('login') }}">
-                     <div class="input-field">
-                        <input id='username' name='username' type="text" class="validate" required>
-                        <label class="active" for="username">Enter Username</label>
-                     </div>
-                     <div class="input-field">
-                        <input id='password' name='password' type="text" class="validate" required>
-                        <label class="active" for="password">Enter Password</label>
-                     </div>
-                     <button type="submit" class="waves-effect waves-light btn light-blue darken-2">Log In</button>
-                  </form>
+         <div class="row">
+            <!-- Registration -->
+            <div class="col s12 m6 l5 offset-l1">
+               <div class="card">
+                  <div class="card-action red white-text">
+                     <strong>REGISTER</strong> <i class="material-icons right">person_add</i>
+                  </div>
+                  <div class="card-content">
+                     <form method=POST action="{{ url_for('register') }}">
+                        <div class="input-field">
+                           <input id='reg-user' name='username' type="text" class="validate" required>
+                           <label class="active" for="username">Choose Username</label>
+                        </div>
+                        <div class="input-field">
+                           <input id='reg-password' name='password' type="text" class="validate" required>
+                           <label class="active" for="password">Choose Password</label>
+                        </div>
+                        <button type="submit" class="waves-effect waves-light btn  darken-2">Register</button>
+                     </form>
+                  </div>
                </div>
             </div>
-            <div>
-               {% with messages = get_flashed_messages() %}
-               {% if messages %}
-               {% for message in messages %}
-               <div class="card-panel red white-text">
-                  {{message}}
+            <!-- Login -->
+            <div class="col s12 m6 l5">
+               <div class="card">
+                  <div class="card-action red white-text"><strong>LOG IN</strong><i class="material-icons right">thumb_up</i>
+                  </div>
+                  <div class="card-content">
+                     <form method=POST action="{{ url_for('login') }}">
+                        <div class="input-field">
+                           <input id='log-user' name='username' type="text" class="validate" required>
+                           <label class="active" for="username">Enter Username</label>
+                        </div>
+                        <div class="input-field">
+                           <input id='log-password' name='password' type="text" class="validate" required>
+                           <label class="active" for="password">Enter Password</label>
+                        </div>
+                        <button type="submit" class="waves-effect waves-light btn darken-2">Log In</button>
+                     </form>
+                  </div>
                </div>
-               {% endfor %}
-               {% endif %}
-               {% endwith %}
             </div>
          </div>
       </div>
+      <!-- Flashed message to display errors -->
+      <div class="row">
+         <div class="col s6 offset-s3">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="card-panel red white-text">
+               {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+         </div>
+      </div>
    </div>
-
-   </div>
-
+   {% include 'includes/_footer.html' %}
+   <!-- Jquery -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!-- Materialize JS -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-   <script type="text/javascript">
-      $(document).ready(function () {
-         $('select').material_select();
-         $(".button-collapse").sideNav();
-         $('.sidenav').sideNav();
-      });
-   </script>
 </body>
 
 </html>
