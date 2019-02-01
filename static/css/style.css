@@ -46,7 +46,6 @@ p>strong {
 
 .card.medium {
    height: 350px;
-
 }
 
 .card .card-content {
@@ -86,7 +85,6 @@ nav .brand-logo {
 
 nav ul a {
    font-size: 16px;
-
 }
 
 /*--------------------------------------------Miscellaneous Styles*/
@@ -115,6 +113,15 @@ nav ul a {
 .row-padding {
    padding-bottom: 50px;
 }
+
+.input-field .prefix~input,
+.input-field .prefix~textarea,
+.input-field .prefix~label,
+.input-field .prefix~.validate~label,
+.input-field .prefix~.autocomplete-content {
+   font-size: 18px;
+}
+
 
 /*--------------------------------------------Index Page Styles*/
 
@@ -161,6 +168,7 @@ select:-webkit-autofill {
    background-color: #778899;
 }
 
+
 /*--------------------------------------------Footer Styles*/
 
 footer,
@@ -182,19 +190,4 @@ footer {
    bottom: 0;
    left: 0;
    z-index: 1030;
-}
-
-
-/*--------------------------------------------Edit Page Styles*/
-/* 
-.button-margin {
-   margin-bottom: 50px;
-} */
-
-.input-field .prefix~input,
-.input-field .prefix~textarea,
-.input-field .prefix~label,
-.input-field .prefix~.validate~label,
-.input-field .prefix~.autocomplete-content {
-   font-size: 18px;
 }
