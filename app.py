@@ -174,6 +174,16 @@ def recipes_by_country(country_name):
         recipes=recipes)
 
 
+@app.route('/my_page/<username>')
+# route to and logic for the users personal page
+def my_page(username):
+    username = session['username']
+    get_user = mongo.db.users.find_one({"username": username})
+    get_recipes = mongo.db.recipes.find(
+        {"username": username}).sort([['_id', -1]])
+    return render_template('my_page.html', username=username, users=get_user, recipes=get_recipes)
+
+
 if __name__ == '__main__':
     app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
