@@ -184,6 +184,15 @@ def my_page(username):
     return render_template('my_page.html', username=username, users=get_user, recipes=get_recipes)
 
 
+@app.route('/my_recipe/<recipe_id>')
+# route to and logic for the my_recipe page
+def my_recipe(recipe_id):
+    my_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_countries = mongo.db.countries.find()
+    all_courses = mongo.db.courses.find()
+    return render_template('my_recipe.html', recipe=my_recipe, countries=all_countries, courses=all_courses)
+
+
 if __name__ == '__main__':
     app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
