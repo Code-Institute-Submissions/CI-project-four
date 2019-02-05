@@ -87,6 +87,7 @@ nav ul a {
    font-size: 16px;
 }
 
+
 /*--------------------------------------------Miscellaneous Styles*/
 
 .btn_small {
@@ -125,13 +126,14 @@ nav ul a {
 
 /*--------------------------------------------Index Page Styles*/
 
-@media (min-width: 641px) {
+@media (min-width: 961px) {
    .index-body {
-      background-image: url("../../static/img/forks.jpg");
+      background-image: url("../../static/img/veggies.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       height: 100%;
+      width: auto;
    }
 }
 
@@ -155,17 +157,15 @@ nav ul a {
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
-select:-webkit-autofill {
+select:-webkit-autofill,
+.title-style {
    background-color: rgba(0, 0, 0, .6) !important;
    ;
    background: rgba(0, 0, 0, .6) !important;
    ;
    background-image: none !important;
-   color: #fff !important;
-}
-
-.title-style {
-   background-color: #778899;
+   color: #ccc;
+    !important;
 }
 
 
