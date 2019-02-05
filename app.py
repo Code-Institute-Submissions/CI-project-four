@@ -210,6 +210,12 @@ def insert_my_recipe():
     return redirect(url_for('my_page', username=username))
 
 
+@app.route('/about')
+# route to the about page
+def about():
+    return render_template('about.html')
+
+
 if __name__ == '__main__':
     app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
