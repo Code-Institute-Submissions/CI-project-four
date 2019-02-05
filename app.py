@@ -90,9 +90,10 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 # function to add a recipe to the recipes collection in the mongo database
 def insert_recipe():
+    username = session['username']
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('my_page', username=username))
 
 
 @app.route('/edit_recipe/<recipe_id>')
