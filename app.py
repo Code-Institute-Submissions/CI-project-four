@@ -194,10 +194,19 @@ def my_recipe(recipe_id):
 
 
 @app.route('/delete_my_recipe/<recipe_id>')
-# function to delete a recipe from the my_recipe page, return user to the my_page
+# function to delete a recipe from the my_recipe page, and return user to the my_page
 def delete_my_recipe(recipe_id):
     username = session['username']
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('my_page', username=username))
+
+
+@app.route('/insert_my_recipe', methods=['POST'])
+# function to add a recipe to the recipes collection in the mongo database, from the my_recipe page, and then return user to the my_page
+def insert_my_recipe():
+    username = session['username']
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
     return redirect(url_for('my_page', username=username))
 
 
