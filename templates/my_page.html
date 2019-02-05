@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+   <br>
+   <br>
+   <div class="row center-align ">
+      <div class="col s12">
+         <h3>{{session.username}}'s Recipe Page</h3>
+      </div>
+   </div>
+   <br>
+   <div class="row row-padding">
+      <h4>Recipes Created:</h4>
+      <hr>
+      <ul>
+         {% for recipe in recipes %}
+         <li>
+            <div class="row valign-wrapper">
+               <div class="col s12 m8 pull-m4">
+                  <h5><em>{{ recipe.recipe_name }}</em></h5>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col s12">
+                  <a href="{{ url_for('my_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn btn_medium green">view/edit</a>
+                  <a href="{{ url_for('delete_my_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn btn-small red right">Delete</a>
+               </div>
+            </div>
+            <hr>
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
+   <!--Clickable button which takes users the to add recipe page -->
+   <div class="fixed-action-btn link-style">
+      <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
+         <i class=" large material-icons">add</i>
+      </a>
+   </div>
+   {% endblock %}
