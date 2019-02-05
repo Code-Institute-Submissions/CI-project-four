@@ -164,8 +164,7 @@ select:-webkit-autofill,
    background: rgba(0, 0, 0, .6) !important;
    ;
    background-image: none !important;
-   color: #ccc;
-    !important;
+   color: #ccc !important;
 }
 
 
