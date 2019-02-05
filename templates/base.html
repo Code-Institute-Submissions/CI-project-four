@@ -27,11 +27,13 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
    <!-- Custom JS -->
    <script type="text/javascript">
+      /* collapsible navbar */
       $(document).ready(function () {
          $('select').material_select();
          $(".button-collapse").sideNav();
          $('.sidenav').sideNav();
       });
+      /* floating action button */
       document.addEventListener('DOMContentLoaded', function () {
          var elems = document.querySelectorAll('.fixed-action-btn');
          var instances = M.FloatingActionButton.init(elems, {

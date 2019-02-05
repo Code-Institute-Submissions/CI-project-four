@@ -1,6 +1,5 @@
 {% extends 'base.html'%}
 {% block content %}
-
 <div class="container">
    <!--Clickable cards which show the recipes of the courses the user has chosen from the courses collections -->
    <br>
@@ -47,11 +46,11 @@
       </div>
       {% endfor %}
    </div>
-</div>
-<!--Clickable button which takes users the to add recipe page -->
-<div class="fixed-action-btn link-style">
-   <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
-      <i class=" large material-icons">add</i>
-   </a>
+   <!--Clickable button which takes users to the add recipe page -->
+   <div class="fixed-action-btn link-style">
+      <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
+         <i class=" large material-icons">add</i>
+      </a>
+   </div>
 </div>
 {% endblock %}

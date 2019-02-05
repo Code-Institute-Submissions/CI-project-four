@@ -1,25 +1,26 @@
 <header>
    <nav>
+      <!--navbar -->
       <div class="nav-wrapper">
          <a href="{{url_for('logged_in')}}" class="brand-logo link-style">
             <small>Asian Cuisine</small>
          </a>
          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+         <!--main navbar -->
          <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('my_page', username = session["username"]) }}">My Recipes</a></li>
+            <li><a href="{{url_for('my_page', username = session['username']) }}">My Recipes</a></li>
             <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
             <li><a href="{{url_for('countries')}}">By Country </a></li>
             <li><a href="{{url_for('logout')}}">Logout</a></li>
-
          </ul>
+         <!--mobile navbar -->
          <ul class="side-nav" id="mobile-demo">
             <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('my_page', username = session["username"]) }}">My Recipes</a></li>
+            <li><a href="{{url_for('my_page', username = session['username']) }}">My Recipes</a></li>
             <li><a href="{{url_for('get_recipes')}}">All Recipes</a></li>
             <li><a href="{{url_for('countries')}}">By Country</a></li>
             <li><a href="{{url_for('logout')}}">Logout</a></li>
-
          </ul>
       </div>
    </nav>

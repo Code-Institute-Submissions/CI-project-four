@@ -1,6 +1,5 @@
 {% extends 'base.html'%}
 {% block content %}
-
 <div class="container">
    <!-- The full collection of all recipes in the database, a user can click on any card to see the recipe -->
    <br>
@@ -49,11 +48,11 @@
          {% endfor %}
       </div>
    </div>
-</div>
-<!--Clickable button which takes users the to add recipe page -->
-<div class="fixed-action-btn link-style">
-   <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
-      <i class=" large material-icons">add</i>
-   </a>
+   <!--Clickable button which takes users to the add recipe page -->
+   <div class="fixed-action-btn link-style">
+      <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
+         <i class=" large material-icons">add</i>
+      </a>
+   </div>
 </div>
 {% endblock %}
