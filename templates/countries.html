@@ -3,85 +3,93 @@
 
 <div class="container">
       <!--Clickable cards which link to the country recipe collections -->
+      <br>
+      <h5><strong>Countries List</strong></h5>
+      <br>
+      <h6>Click on the cards for more info</h6>
       <div class="row">
-            <div class="col s12 m6 l4">
-                  <div class="card medium hoverable z-depth-2">
-                        <div class="card-image ">
-                              <img src="static/img/chinese.jpeg" alt="A plate of chinese vegetables in a special sauce">
-                              <span class="card-title">中文</span>
-                        </div>
-                        <div class="card-content">
-                              <p>Chinese cuisine with a twist, tasty vegan meals you will love to eat. </p>
-                        </div>
-                        <div class="card-action">
-                              <a href="{{url_for('recipes_by_country', country_name='China')}}">Chinese Collection</a>
-                        </div>
-                  </div>
-            </div>
-            <div class="col s12 m6 l4">
-                  <div class="card medium hoverable z-depth-2">
-                        <div class="card-image">
-                              <img src="static/img/indian.jpeg" alt="A bowl of indian pea and potato medium spiced curry">
-                              <span class="card-title"> भारतीय</span>
-                        </div>
-                        <div class="card-content">
-                              <p>Delicious and fragrant meat and dairy free Indian specialities. </p>
-                        </div>
-                        <div class="card-action">
-                              <a href="{{url_for('recipes_by_country', country_name='India')}}">Indian Collection</a>
+            <div class="row">
+                  <div class="col s12 m6 l4">
+                        <div class="card medium hoverable z-depth-2">
+                              <div class="card-image ">
+                                    <img src="static/img/chinese.jpeg" alt="A plate of chinese vegetables in a special sauce">
+                                    <span class="card-title">中文</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>Chinese cuisine with a twist, tasty vegan meals you will love to eat. </p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="{{url_for('recipes_by_country', country_name='China')}}">Chinese
+                                          Collection</a>
+                              </div>
                         </div>
                   </div>
-            </div>
-            <div class="col s12 m6 l4">
-                  <div class="card medium hoverable z-depth-2">
-                        <div class="card-image">
-                              <img src="static/img/thai.jpg" alt="A bowl of spicy thai vegetable noodle soup">
-                              <span class="card-title">
-                                    ไทย</span>
-                        </div>
-                        <div class="card-content">
-                              <p>Some well known traditional Thai vegan dishes for you to try.</p>
-                        </div>
-                        <div class="card-action">
-                              <a href="{{url_for('recipes_by_country', country_name='Thailand')}}">Thai Collection</a>
-                        </div>
-                  </div>
-            </div>
-            <div class="col s12 m6 l4 offset-l2">
-                  <div class="card medium hoverable z-depth-2">
-                        <div class="card-image">
-                              <img src="static/img/viet.jpeg" alt="A bowl of vietnamese vegetable noodles">
-                              <span class="card-title">Tiếng Việt</span>
-                        </div>
-                        <div class="card-content">
-                              <p>A wonderful selection of some of Vietnam's very best vegan dishes</p>
-                        </div>
-                        <div class="card-action">
-                              <a href="{{url_for('recipes_by_country', country_name='Vietnam')}}">Vietnamese Collection</a>
+                  <div class="col s12 m6 l4">
+                        <div class="card medium hoverable z-depth-2">
+                              <div class="card-image">
+                                    <img src="static/img/indian.jpeg" alt="A bowl of indian pea and potato medium spiced curry">
+                                    <span class="card-title"> भारतीय</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>Delicious and fragrant meat and dairy free Indian specialities. </p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="{{url_for('recipes_by_country', country_name='India')}}">Indian Collection</a>
+                              </div>
                         </div>
                   </div>
-            </div>
-            <div class="col s12 m6 l4">
-                  <div class="card medium hoverable z-depth-2">
-                        <div class="card-image">
-                              <img src="static/img/other.jpeg" alt="Vegan veggie kebab skewers with tofu and peanut dippng sauce">
-                              <span class="card-title">ល្បាយអាស៊ី</span>
+                  <div class="col s12 m6 l4">
+                        <div class="card medium hoverable z-depth-2">
+                              <div class="card-image">
+                                    <img src="static/img/thai.jpg" alt="A bowl of spicy thai vegetable noodle soup">
+                                    <span class="card-title">
+                                          ไทย</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>Some well known traditional Thai vegan dishes for you to try.</p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="{{url_for('recipes_by_country', country_name='Thailand')}}">Thai
+                                          Collection</a>
+                              </div>
                         </div>
-                        <div class="card-content">
-                              <p>A mixture of exotic and unique vegan food from other Asian countries.</p>
+                  </div>
+                  <div class="col s12 m6 l4 offset-l2">
+                        <div class="card medium hoverable z-depth-2">
+                              <div class="card-image">
+                                    <img src="static/img/viet.jpeg" alt="A bowl of vietnamese vegetable noodles">
+                                    <span class="card-title">Tiếng Việt</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>A wonderful selection of some of Vietnam's very best vegan dishes</p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="{{url_for('recipes_by_country', country_name='Vietnam')}}">Vietnamese
+                                          Collection</a>
+                              </div>
                         </div>
-                        <div class="card-action">
-                              <a href="{{url_for('recipes_by_country', country_name='Other')}}">Miscellaneous
-                                    Collection</a>
+                  </div>
+                  <div class="col s12 m6 l4">
+                        <div class="card medium hoverable z-depth-2">
+                              <div class="card-image">
+                                    <img src="static/img/other.jpeg" alt="Vegan veggie kebab skewers with tofu and peanut dippng sauce">
+                                    <span class="card-title">ល្បាយអាស៊ី</span>
+                              </div>
+                              <div class="card-content">
+                                    <p>A mixture of exotic and unique vegan food from other Asian countries.</p>
+                              </div>
+                              <div class="card-action">
+                                    <a href="{{url_for('recipes_by_country', country_name='Other')}}">Miscellaneous
+                                          Collection</a>
+                              </div>
                         </div>
                   </div>
             </div>
       </div>
-</div>
-<!--Clickable button which takes users the to add recipe page -->
-<div class="fixed-action-btn link-style">
-      <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
-            <i class=" large material-icons">add</i>
-      </a>
-</div>
-{% endblock %}
+      <!--Clickable button which takes users the to add recipe page -->
+      <div class="fixed-action-btn link-style">
+            <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
+                  <i class=" large material-icons">add</i>
+            </a>
+      </div>
+      {% endblock %}
