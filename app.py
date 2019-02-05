@@ -193,6 +193,14 @@ def my_recipe(recipe_id):
     return render_template('my_recipe.html', recipe=my_recipe, countries=all_countries, courses=all_courses)
 
 
+@app.route('/delete_my_recipe/<recipe_id>')
+# function to delete a recipe from the my_recipe page, return user to the my_page
+def delete_my_recipe(recipe_id):
+    username = session['username']
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('my_page', username=username))
+
+
 if __name__ == '__main__':
     app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
