@@ -6,9 +6,11 @@ import bcrypt
 
 app = Flask(__name__)
 # Set app.configs
-app.config["MONGO_DBNAME"] = 'flask_cookbook'
-app.config["MONGO_URI"] = 'mongodb://admin:cookbook33@ds233320.mlab.com:33320/flask_cookbook'
-
+# app.config["MONGO_DBNAME"] = 'flask_cookbook'
+# app.config["MONGO_URI"] = 'mongodb://admin:cookbook33@ds233320.mlab.com:33320/flask_cookbook'
+# Set app variables
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
 
@@ -221,4 +223,4 @@ if __name__ == '__main__':
     app.secret_key = 'ssssshhhhh'
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
