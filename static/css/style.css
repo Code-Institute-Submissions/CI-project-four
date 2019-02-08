@@ -198,8 +198,3 @@ footer {
    left: 0;
    z-index: 1030;
 }
-
-
-.select-wrapper input.select-dropdown {
-   height: 6rem !important;
-}
