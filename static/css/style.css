@@ -123,6 +123,13 @@ nav ul a {
    font-size: 18px;
 }
 
+select {
+   border: 1px solid seashell !important;
+}
+
+.select-wrapper input.select-dropdown {
+   height: 6rem !important;
+}
 
 /*--------------------------------------------Index Page Styles*/
 
@@ -135,6 +142,7 @@ nav ul a {
       height: 100%;
       width: auto;
    }
+
 }
 
 .index-style {
@@ -189,4 +197,9 @@ footer {
    bottom: 0;
    left: 0;
    z-index: 1030;
+}
+
+
+.select-wrapper input.select-dropdown {
+   height: 6rem !important;
 }
