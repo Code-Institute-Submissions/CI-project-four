@@ -8,13 +8,15 @@
                   <div class="row">
                         <div class="input-field col s12">
                               <i class="material-icons prefix">child_care</i>
-                              <input name="username" id="user_name" type="text" value="{{session.username}}">
+                              <input name="username" id="user_name" type="text" class="validate" required="required"
+                                    aria-required="true" value="{{session.username}}">
                               <label for="icon_prefix">User</label>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">flight</i>
-                                    <select id="country" name="country_name">
+                                    <select id="country" name="country_name" type="text" class="validate" required="required"
+                                          aria-required="true">
                                           <option value="" disabled selected>Choose Country</option>
                                           {% for country in countries %}
                                           <option value="{{country.country_name}}">{{country.country_name}}</option>
@@ -26,7 +28,8 @@
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">color_lens</i>
-                                    <select id="course" name="course_type">
+                                    <select id="course" name="course_type" type="text" class="validate" required="required"
+                                          aria-required="true">
                                           <option value="" disabled selected>Choose Course Type</option>
                                           {% for course in courses %}
                                           <option value="{{course.course_type}}">{{course.course_type}}</option>
@@ -38,38 +41,43 @@
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">create</i>
-                                    <input id="recipe_name" name="recipe_name" type="text">
+                                    <input id="recipe_name" name="recipe_name" type="text" class="validate" required="required"
+                                          aria-required="true">
                                     <label for="icon_prefix">Recipe Name</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">content_paste</i>
-                                    <textarea name="recipe_description" id="recipe_description" class="materialize-textarea validate"></textarea>
+                                    <textarea name="recipe_description" id="recipe_description" class="materialize-textarea validate"
+                                          required="required" aria-required="true"></textarea>
                                     <label for="icon_telephone">Description</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s4">
                                     <i class="material-icons prefix">hourglass_empty</i>
-                                    <input id="preparation_time" name="preparation_time" type="text">
+                                    <input id="preparation_time" name="preparation_time" type="text" class="validate"
+                                          required="required" aria-required="true">
                                     <label for="icon_prefix">Preparation Time</label>
                               </div>
                               <div class="input-field col s4">
                                     <i class="material-icons prefix">hourglass_full</i>
-                                    <input id="cooking_time" name="cooking_time" type="text">
+                                    <input id="cooking_time" name="cooking_time" type="text" class="validate" required="required"
+                                          aria-required="true">
                                     <label for="icon_prefix">Cooking Time</label>
                               </div>
                               <div class="input-field col s4">
                                     <i class="material-icons prefix">assignment_turned_in</i>
-                                    <input id="total_time" name="total_time" type="text">
+                                    <input id="total_time" name="total_time" type="text" class="validate" required="required"
+                                          aria-required="true">
                                     <label for="icon_prefix">Total Time</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">local_dining</i>
-                                    <select required id="servings" name="servings">
+                                    <select id="servings" name="servings" required="required" aria-required="true">
                                           <option value="" disabled selected>Enter servings amount</option>
                                           <option value="1">1</option>
                                           <option value="2">2</option>
@@ -86,28 +94,32 @@
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">list</i>
-                                    <textarea name="ingredients" id="ingredients" class="materialize-textarea"></textarea>
+                                    <textarea name="ingredients" id="ingredients" class="materialize-textarea validate"
+                                          required="required" aria-required="true"></textarea>
                                     <label for="icon_prefix">Ingredients List</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">local_library</i>
-                                    <textarea name="instructions" id="instructions" class="materialize-textarea"></textarea>
+                                    <textarea name="instructions" id="instructions" class="materialize-textarea validate"
+                                          required="required" aria-required="true"></textarea>
                                     <label for="icon_prefix">Cooking Instructions</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">label_outline</i>
-                                    <input id="tags" name="tags" type="text">
+                                    <input id="tags" name="tags" type="text" class="validate" required="required"
+                                          aria-required="true">
                                     <label for="icon_prefix">Tags</label>
                               </div>
                         </div>
                         <div class="row">
                               <div class="input-field col s12">
                                     <i class="material-icons prefix">error_outline</i>
-                                    <input id="allergens" name="allergens" type="text">
+                                    <input id="allergens" name="allergens" type="text" class="validate" required="required"
+                                          aria-required="true">
                                     <label for="icon_prefix">Allergens</label>
                               </div>
                         </div>

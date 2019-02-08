@@ -33,11 +33,15 @@
          $(".button-collapse").sideNav();
          $('.sidenav').sideNav();
       });
-      /* floating action button */
-      document.addEventListener('DOMContentLoaded', function () {
-         var elems = document.querySelectorAll('.fixed-action-btn');
-         var instances = M.FloatingActionButton.init(elems, {
-            direction: 'left'
+      $(document).ready(function () {
+         $('select').material_select();
+
+         // for HTML5 "required" attribute
+         $("select[required]").css({
+            display: "inline",
+            height: 0,
+            padding: 0,
+            width: 0
          });
       });
    </script>
