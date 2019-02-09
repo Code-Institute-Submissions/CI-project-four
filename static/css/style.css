@@ -123,6 +123,10 @@ nav ul a {
    font-size: 18px;
 }
 
+.select-wrapper input.select-dropdown {
+   font-size: 18px !important;
+}
+
 select {
    border: 1px solid seashell !important;
 }
