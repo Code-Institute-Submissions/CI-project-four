@@ -88,7 +88,7 @@ nav ul a {
 }
 
 
-/*--------------------------------------------Miscellaneous Styles*/
+/*-----------------------------------------Miscellaneous Styles*/
 
 .btn_small {
    height: 36px;
@@ -201,4 +201,27 @@ footer {
    bottom: 0;
    left: 0;
    z-index: 1030;
+}
+
+
+/*----------------------------------------Pagination Styles*/
+
+.easyPaginateNav {
+   position: relative;
+   text-align: center;
+   margin: auto;
+   width: 100% !important;
+}
+
+.easyPaginateNav a {
+   color: #708090;
+   border-radius: 10px;
+   font-size: 16px;
+   padding: 0 8px;
+   line-height: 20px;
+}
+
+.easyPaginateNav .current {
+   background-color: #6a5acd;
+   color: #f5fffa;
 }
