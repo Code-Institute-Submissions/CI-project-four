@@ -13,8 +13,8 @@
    <div class="row row-padding">
       <h4>Recipes Created:</h4>
       <hr>
-      {% for recipe in recipes %}
-      <ul>
+      <ul id="easyPaginate">
+         {% for recipe in recipes %}
          <li>
             <div class="row valign-wrapper">
                <div class="col s12 m8 pull-m4">
@@ -30,8 +30,8 @@
             </div>
             <hr>
          </li>
+         {% endfor %}
       </ul>
-      {% endfor %}
    </div>
    <!--Clickable button which takes users to the add recipe page -->
    <div class="fixed-action-btn link-style">
