@@ -112,7 +112,7 @@ nav ul a {
 }
 
 .row-padding {
-   padding-bottom: 50px;
+   padding-bottom: 80px;
 }
 
 .input-field .prefix~input,
@@ -133,6 +133,10 @@ select {
 
 .select-wrapper input.select-dropdown {
    height: 6rem !important;
+}
+
+.full-page-font {
+   font-size: 17px;
 }
 
 /*--------------------------------------------Index Page Styles*/
@@ -230,14 +234,12 @@ footer {
 /*----------------------------------------Uploaded Images Styles*/
 .square {
    object-fit: cover !important;
-   min-height: 233px;
-   min-width: auto;
+   height: 233px;
+   width: auto;
 }
 
 .square-user-page {
    object-fit: cover !important;
-   min-height: 200px;
-   min-width: 200px;
-   max-height: 200px;
-   max-width: 200px;
+   height: 200px;
+   width: 200px;
 }
