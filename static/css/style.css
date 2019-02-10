@@ -49,7 +49,7 @@ p>strong {
 }
 
 .card .card-content {
-   padding-bottom: 40px;
+   padding-bottom: 20px;
    padding-top: 10px;
 }
 
@@ -222,6 +222,22 @@ footer {
 }
 
 .easyPaginateNav .current {
-   background-color: #6a5acd;
+   background-color: #FF8A65;
    color: #f5fffa;
+}
+
+
+/*----------------------------------------Uploaded Images Styles*/
+.square {
+   object-fit: cover !important;
+   min-height: 233px;
+   min-width: auto;
+}
+
+.square-user-page {
+   object-fit: cover !important;
+   min-height: 200px;
+   min-width: 200px;
+   max-height: 200px;
+   max-width: 200px;
 }

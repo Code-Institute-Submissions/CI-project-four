@@ -7,52 +7,52 @@
    <br>
    <h6>Click on the cards for more info</h6>
    <div class="row">
-         {% for recipe in recipes %}
-         <div class="col s12 m6 l4">
-            <div class="card medium hoverable">
-               <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="static/img/vegan1.jpeg" alt="Picture of fruit and vegetables">
-               </div>
-               <div class="card-content">
-                  <span class="card-title activator blue-grey-text text-darken-3">{{recipe.recipe_name}}<i class="material-icons right">keyboard_arrow_down</i></span><br>
-                  <p><strong>Country of origin:</strong> {{recipe.country_name}}</p>
-                  <p><strong>Course Type:</strong> {{recipe.course_type}}</p><br>
-               </div>
-               <div class="card-reveal">
-                  <span class="card-title blue-grey-text text-darken-3 "><i class="material-icons right">close</i>{{recipe.recipe_name}}</span>
-                  <p>{{recipe.recipe_description}}</p>
-                  <ul>
-                     <li>
-                        <span>
-                           <strong>Recipe Creator:</strong> {{recipe.recipe_creator}}<br><br>
-                           <strong>Preparation:</strong> {{recipe.preparation_time}}
-                           <strong>Cooking:</strong> {{recipe.cooking_time}}
-                           <strong>Total Time:</strong> {{recipe.total_time}}<br><br>
-                           <strong>Servings:</strong> {{recipe.servings}}<br><br>
-                           <strong>Ingredients:</strong> {{recipe.ingredients}}<br><br>
-                           <strong>Cooking Instructions:</strong> {{recipe.instructions}}<br><br>
-                           <strong>Tags:</strong> {{recipe.tags}}<br><br>
-                           <strong>Allergens:</strong> {{recipe.allergens}}<br>
-                        </span>
-                     </li>
-                  </ul>
-                  <hr>
-                  <div>
-                     <!--Users may choose to edit or delete the recipe-->
-                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small green">Edit</a>
-                     <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small red ">Delete</a>
-                  </div>
+      {% for recipe in recipes %}
+      <div class="col s12 m6 l4">
+         <div class="card medium hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+               <img src="{{ recipe.img_url }}" alt="Picture of the dish" class="square">
+            </div>
+            <div class="card-content">
+               <span class="card-title activator blue-grey-text text-darken-3">{{recipe.recipe_name}}<i class="material-icons right">keyboard_arrow_down</i></span>
+               <p><strong>Country of origin:</strong> {{recipe.country_name}}</p>
+               <p><strong>Course Type:</strong> {{recipe.course_type}}</p><br>
+            </div>
+            <div class="card-reveal">
+               <span class="card-title blue-grey-text text-darken-3 "><i class="material-icons right">close</i>{{recipe.recipe_name}}</span>
+               <p>{{recipe.recipe_description}}</p>
+               <ul>
+                  <li>
+                     <span>
+                        <strong>Recipe Creator:</strong> {{recipe.recipe_creator}}<br><br>
+                        <strong>Preparation:</strong> {{recipe.preparation_time}}
+                        <strong>Cooking:</strong> {{recipe.cooking_time}}
+                        <strong>Total Time:</strong> {{recipe.total_time}}<br><br>
+                        <strong>Servings:</strong> {{recipe.servings}}<br><br>
+                        <strong>Ingredients:</strong> {{recipe.ingredients}}<br><br>
+                        <strong>Cooking Instructions:</strong> {{recipe.instructions}}<br><br>
+                        <strong>Tags:</strong> {{recipe.tags}}<br><br>
+                        <strong>Allergens:</strong> {{recipe.allergens}}<br>
+                     </span>
+                  </li>
+               </ul>
+               <hr>
+               <div>
+                  <!--Users may choose to edit or delete the recipe-->
+                  <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small green">Edit</a>
+                  <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small red ">Delete</a>
                </div>
             </div>
          </div>
-         {% endfor %}
       </div>
+      {% endfor %}
    </div>
-   <!--Clickable button which takes users to the add recipe page -->
-   <div class="fixed-action-btn link-style">
-      <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
-         <i class=" large material-icons">add</i>
-      </a>
-   </div>
+</div>
+<!--Clickable button which takes users to the add recipe page -->
+<div class="fixed-action-btn link-style">
+   <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2" title="Add a Recipe" href="{{url_for('add_recipe')}}">
+      <i class=" large material-icons">add</i>
+   </a>
+</div>
 </div>
 {% endblock %}

@@ -125,7 +125,8 @@ def update_recipe(recipe_id):
         'instructions': request.form.get('instructions'),
         'allergens': request.form.get('allergens'),
         'tags': request.form.get('tags'),
-        'recipe_creator': request.form.get('recipe_creator')
+        'recipe_creator': request.form.get('recipe_creator'),
+        'img_url' : request.form('img_url')
     })
     return redirect(url_for('get_recipes'))
 
