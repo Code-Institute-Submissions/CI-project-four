@@ -126,7 +126,7 @@ def update_recipe(recipe_id):
         'allergens': request.form.get('allergens'),
         'tags': request.form.get('tags'),
         'recipe_creator': request.form.get('recipe_creator'),
-        'img_url' : request.form('img_url')
+        'img_url': request.form('img_url')
     })
     return redirect(url_for('get_recipes'))
 
@@ -218,6 +218,15 @@ def insert_my_recipe():
 # route to the about page
 def about():
     return render_template('about.html')
+
+
+@app.route('/full_page_view/<recipe_id>')
+# route to the full view page
+def full_page_view(recipe_id):
+    view_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_countries = mongo.db.countries.find()
+    all_courses = mongo.db.courses.find()
+    return render_template('full_page_view.html', recipe=view_recipe, countries=all_countries, courses=all_courses)
 
 
 if __name__ == '__main__':
