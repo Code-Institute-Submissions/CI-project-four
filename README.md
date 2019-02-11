@@ -16,7 +16,7 @@
 
 
 1. [Project Instructions](#instructions-from-code-institute)
-2. [Riddle Information](#riddle-information)
+2. [Cookbook Information](#cookbook-information)
 3. [UX](#ux)
     * [Design](#design)
     * [User Stories](#user-stories)
@@ -42,14 +42,14 @@ Guidelines for project development:
 
 
 - Create a web application that allows users to store and easily access cooking recipes
--Put some effort into designing a database schema based on recipes, and any other related properties and entities.
--Make sure to put some thought into the relationships between them, and use foreign keys to connect these pieces of data.
--Create the backend code and frontend form to allow users to add new recipes to the site. Create the backend code to group and summarize the recipes on the site, based on their attributes such as cuisine or country of origin etc.
+- Put some effort into designing a database schema based on recipes, and any other related properties and entities.
+- Make sure to put some thought into the relationships between them, and use foreign keys to connect these pieces of data.
+- Create the backend code and frontend form to allow users to add new recipes to the site. Create the backend code to group and summarize the recipes on the site, based on their attributes such as cuisine or country of origin etc.
 Create a frontend page to show this summary, and make the categories clickable to drill down into a filtered view based on that category.
--Create the backend code to retrieve a list of recipes.
--Create a detailed view for each recipes, that would just show all attributes for that recipe, and the full preparation instructions.
--Allow for editing and deleting of the recipe records, either on separate pages, or built into the list/detail pages.
--Optionally, you may choose to add basic user registration and authentication to the site.
+- Create the backend code to retrieve a list of recipes.
+- Create a detailed view for each recipes, that would just show all attributes for that recipe, and the full preparation instructions.
+- Allow for editing and deleting of the recipe records, either on separate pages, or built into the list/detail pages.
+- Optionally, you may choose to add basic user registration and authentication to the site.
 - You should conduct and document tests to ensure that all of your website’s functionality works well.
 - Write a README.md file for your project.
 - Use Git & GitHub for version control.
@@ -60,10 +60,10 @@ Create a frontend page to show this summary, and make the categories clickable t
 
 ## Cookbook Information
 
--This app is for people who may be interesting in learning more about meat and dairy free Asian cuisine. 
--The Cookbook was created with simplicity and ease of use in mind. Users can add, view, edit and delete their own recipes.
--Users can also view, edit and delete recipes of other users.
--With this in mind it is hoped users will personalize their cookbook, keeping the recipes they like best.
+- This app is for people who may be interesting in learning more about meat and dairy free Asian cuisine. 
+- The Cookbook was created with simplicity and ease of use in mind. Users can add, view, edit and delete their own recipes.
+- Users can also view, edit and delete recipes of other users.
+- With this in mind it is hoped users will personalize their cookbook, keeping the recipes they like best.
 
 
 
@@ -98,16 +98,15 @@ Create a frontend page to show this summary, and make the categories clickable t
 
 Several user stories were considered before development began:
 
-1.I eat a plant-based diet and would like to visit a website with 100% vegan recipes.
-2.I am interested in veganism and would like to visit a website that has a collection of plant-based recipes.
-3.As a parent I want to encourage my children to eat fruits and vegetables, I would like to visit a website with healthy food options.
-4.I live by myself and want to learn about making wholesome meals at home so I don't just order takeaway.
-5.As a person who wants to improve their cooking skills, I'm looking for new recipes to try.
-6.I currently eat an unhealthy diet and want access to recipes that are good for my health.
-7.I want to be able to store all my favorite recipes online, with minimum fuss.
-8. I want to edit and delete recipes.
-9.I want to encourage my friends to consider eating less meat and dairy, and would like to be able to recommend a good recipe website to them.
-
+1. "I eat a plant-based diet and would like to visit a website with 100% vegan recipes."
+2. "I am interested in veganism and would like to visit a website that has a collection of plant-based recipes."
+3. "As a parent I want to encourage my children to eat fruits and vegetables, I would like to visit a website with healthy food options."
+4. "I live by myself and want to learn about making wholesome meals at home so I don't just order takeaway."
+5. "As a person who wants to improve their cooking skills, I'm looking for new recipes to try."
+6. "I currently eat an unhealthy diet and want access to recipes that are good for my health."
+7. "I want to be able to store all my favorite recipes online, with minimum fuss."
+8. "I want to edit and delete recipes."
+9. "I want to encourage my friends to consider eating less meat and dairy, and would like to be able to recommend a good recipe website to them."
 
 
 
@@ -254,7 +253,7 @@ Several user stories were considered before development began:
 <details>
       <summary><strong><em>Manual Tests</em></strong></summary>
 
-##Manual Tests:
+## Manual Tests:
   
 
 #### Index Page:
@@ -322,8 +321,8 @@ Several user stories were considered before development began:
 
 
 <details>
+      <summary><strong><em>Other</em></strong></summary>
 
-## Other:
 
 ### Further Testing
 
@@ -341,8 +340,6 @@ isolate issues and improve mobile responsiveness.
 - There was an issue with the full screen background image on the landing page not taking up the full viewport on some smaller mobile screens. As a result,  a media query was used to remove the background image on some smaller mobile screens.
 - There was an issue hiding the app.configs for the mongo database. This issue remained unresolved and the app.configs are displayed in the app.py page.
 - There were issues using pagination on the All Recipes page. As the page wasn't displaying correctly, the pagination functionality was removed.
-
-
 </details> 
 
 
