@@ -82,7 +82,7 @@ Create a frontend page to show this summary, and make the categories clickable t
 
 - The Materialize CSS framework underpins the project and was implemented as per convention. 
   
--Users are asked to register or login before being granted access to the website.
+- Users are asked to register or login before being granted access to the website.
 
 - All pages share the same navbar and footer, though each page has a clear purpose and some unique functionality.
   
@@ -121,7 +121,7 @@ Several user stories were considered before development began:
 | Asian Cuisine | This page displays a welcome message and three courses cards(starter, Main, Dessert), click on a card to see it's recipe collection. All the recipe cards in the collection will be returned. Users can click on a card to view, edit or delete the recipe. If they choose to edit a recipe it will be stored in there personal collection and can be viewed in the My Recipes page. |
 | About         |                                                                                                                                           This page gives a brief description of the website's purpose and provides some navigation tips.                                                                                                                                            |
 | My Recipes    |                                                                                                                 This page displays the users collection of created recipes in a list from newest to oldest. Users can also view, edit and delete their recipes here.                                                                                                                 |
-| All Recipes   |                                      This page displays all recipes in the Cookbook. Users can click on a recipe card for full instructions on cooking time, ingredients etc. User can also edit or delete any recipe. If they choose to edit a recipe it will be stored in there personal collection and can be viewed in the My Recipes page.                                      |
+| All Recipes   |                                      This page displays all recipes in the Cookbook. Users can click on a recipe card for full instructions on cooking time, ingredients etc. User can also edit or delete any recipe. If they choose to edit a recipe it will be stored in their personal collection and can be viewed in the My Recipes page.                                      |
 | By Country    |     This page displays five country collection cards, click on a card to see all recipes in that countries collection. All the recipe cards in the countries collection will be returned. Users can click on a card to view, edit or delete the recipe. If they choose to edit a recipe it will be stored in there personal collection and can be viewed in the My Recipes page.     |
 | Logout        |                                                                                                                                                       Users can log out at any time and will be returned to the landing page.                                                                                                                                                        |
 
