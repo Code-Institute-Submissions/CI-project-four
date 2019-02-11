@@ -141,7 +141,7 @@ select {
 
 /*--------------------------------------------Index Page Styles*/
 
-@media (min-width: 961px) {
+@media (min-height: 900px) {
    .index-body {
       background-image: url("../../static/img/veggies.jpg");
       background-size: cover;

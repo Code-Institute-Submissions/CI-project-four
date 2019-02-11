@@ -34,7 +34,7 @@
                </h5>
             </div>
          </div>
-         <div class="row">
+         <div class="row row-padding">
             <!-- Registration -->
             <div class="col s12 m6 l5 offset-l1">
                <div class="card">
@@ -76,20 +76,18 @@
                   </div>
                </div>
             </div>
-         </div>
-      </div>
-      <!-- Flashed message to display errors -->
-      <div class="row">
-         <div class="col s6 offset-s3">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="card-panel red white-text">
-               {{message}}
+            <!-- Flashed message to display errors -->
+            <div class="col s6 offset-s3">
+               {% with messages = get_flashed_messages() %}
+               {% if messages %}
+               {% for message in messages %}
+               <div class="card-panel red white-text">
+                  {{message}}
+               </div>
+               {% endfor %}
+               {% endif %}
+               {% endwith %}
             </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
          </div>
       </div>
    </div>
