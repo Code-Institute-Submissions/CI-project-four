@@ -22,7 +22,7 @@
     * [User Stories](#user-stories)
 4. [Features](#features)
 5. [Technologies](#technologies-used)
-6. [Database schema](#database-schema)
+6. [Database Schema](#database-schema)
 7. [Testing](#testing)
     * [User Stories](#user-stories)
     * [Manual Testing](#manual-testing)
@@ -186,7 +186,7 @@ Several user stories were considered before development began:
 - [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
     - The project uses the **Flask-PyMongo** as per instructions.
     - 
-- [MongoDB](http://flask.pocoo.org/)
+- [MongoDB](https://www.mongodb.com/)
     - The project uses the **MongoDB** for the apps database.
 
 
@@ -202,10 +202,10 @@ Several user stories were considered before development began:
 
 
 
-## Technologies Used
+## Database Schema
 
 
-   - The main MongoDB collection `recipes` has the following schema.
+##### The main MongoDB collection `recipes` has the following schema.
 
 ```json
 
@@ -241,11 +241,11 @@ Several user stories were considered before development began:
 
 ## User Tests:
 
-1. Verify that it all recipes are vegan.
+1. Verify that all recipes are vegan.
 2. Verify that there are several health conscious recipes.
 3. Verify that are several recipes which are simple to prepare.
 4. Verify that users can store their favorite recipes on the website.
-5. Verify that users would be happy to recommend the website to others interested in  plant-based diet.
+5. Verify that users would be happy to recommend the website to others interested in a plant-based diet.
 6. Verify that users can edit and delete recipes.
 </details> 
 
@@ -262,10 +262,11 @@ Several user stories were considered before development began:
 2. Try to submit the empty register form and verify that an error message about the required fields appears.
 3. Try to submit the empty login form and verify that an error message about the required fields appears.
 4. Try to submit the login form  without first registering and verify that an error message appears.
-5. Regards the registration form, verify a user receives a warning message if they enter a user name that has already been chosen by another user.
-6. When a user successfully registers verify they are taken directly to the courses page and receive a welcome message.
-7. When a user successfully logs in verify they are taken directly to the courses page and receive a welcome message.
-8. Verify the link in the footer is functioning correctly. 
+5. For the registration form, verify a user receives a warning message if they enter a user name that has already been chosen by another user.
+6. For the login form, verify a user receives a warning message if they enter an incorrect user name and/or password.
+7. When a user successfully registers verify they are taken directly to the courses page and receive a welcome message.
+8. When a user successfully logs in verify they are taken directly to the courses page and receive a welcome message.
+9. Verify the link in the footer is functioning correctly. 
 
 #### Navbar:
 
@@ -277,15 +278,14 @@ Several user stories were considered before development began:
 6. Click on the "Logout" link, verify the user is logged out and taken to the index page.
 
 #### Add Recipe Button:
-1. Verify the floating action button is displaying in the bottom left corner of all pages bar the index page.
+1. Verify the floating action button is displaying in the bottom left corner of all pages except the index page.
 2. Verify users are taken to the add recipe page when they click on the button.
    
 #### Recipe Cards:
 1. Verify cards display all recipe information stored in the database.
-2. Verify the view button is functioning correctly, when clicked users are taken to  full page view of the recipe.
+2. Verify the view button is functioning correctly, when clicked users are taken to a full page view of the recipe.
 3. Verify the edit button is functioning correctly, when clicked users are taken to the edit recipe page.
-4. Verify the delete button is functioning correctly, when clicked the recipe is deleted..
-5. Verify users are taken to the add recipe page when they click on the button.
+4. Verify the delete button is functioning correctly, when clicked the recipe is deleted.
 
 #### Courses Page:
 
@@ -300,11 +300,11 @@ Several user stories were considered before development began:
    
 1. Verify any recipe a user adds or edits is displayed here.
 2. Verify users are shown a picture of the recipe with the recipe name below.
-3. Verify users can view, edit or delete by clicking the buttons labeled same. 
+3. Verify users can view, edit or delete a recipe by clicking the buttons labeled same. 
 
 #### All Recipes Page:
 
-1. Verify the full collection of recipes cards are displayed here
+1. Verify the full collection of recipe cards are displayed here.
 
 #### By Country Page:
 
@@ -330,7 +330,7 @@ Several user stories were considered before development began:
 isolate issues and improve mobile responsiveness.
 - The app has been tested on various browsers, including Chrome, Firefox, Opera, and Safari.
 - The app was tested across many screen sizes, from very small to very large.
-- Some family members tested the app on their own devices and their recommendations, such as to individual recipe images, were taken on board.
+- Some family members tested the app on their own devices and their recommendations, such as to include individual recipe images, were taken on board.
 - It is displaying as intended across various devices and in different browsers.
 
 
